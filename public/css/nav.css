@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1c1c25;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+@media (min-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+nav {
+  width: 90%;
+  margin: 10px auto 0;
+  z-index: 10;
+}
+nav #logo {
+  color: #fff;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 24px;
+  z-index: 10;
+}
+nav #logo img {
+  width: 50px;
+  height: 25px;
+  position: relative;
+  left: 5px;
+  top: 2px;
+  z-index: 10;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+nav ul li {
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+  z-index: 3;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  margin-top: 3px;
+  transition: 0.3s;
+}
+nav ul li:hover {
+  letter-spacing: 3px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li.active:before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: -5px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(rgb(250, 102, 4), rgb(238, 6, 161));
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+.toggler img {
+  width: 30px;
+  height: 30px;
+  display: none;
+  cursor: pointer;
+  z-index: 999999;
+}
+@media (max-width: 767px) {
+  nav .links {
+    position: absolute;
+    top: 60px;
+    left: 100%;
+    background: #1c1c25;
+    z-index: 100;
+    min-height: 100vh;
+    width: 100%;
+  }
+  nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+    text-align: center;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+  .toggler img {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 13px;
+  }
+  .toggler.open img {
+    width: 25px;
+    height: 25px;
+  }
+}

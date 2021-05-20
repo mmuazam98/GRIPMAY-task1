@@ -1,0 +1,43 @@
+<%- include("partials/nav") %> 
+    <div class="toggler-sub">
+      <div class="view table active">
+        <span></span><img src="../assets/view1.svg" alt="" />
+      </div>
+      <div class="view cards"><span></span><img src="../assets/view2.svg" alt="" /></div>
+    </div>
+    <section>
+      <table id="customers">
+        <tr>
+          <th>Name</th>
+          <th>Contact</th>
+          <th>Accont Type</th>
+        </tr>
+       <% customers.forEach(el => { %>
+        <tr class="row" data-link="<%= el.userID %>">
+          <td><%= el.name %></td>
+          <td><%= el.email %></td>
+          <td><%= el.acc_type %> Account</td>
+        </tr>
+       <% }) %>
+     
+      
+      </table>
+      <div class="grid">
+       <% customers.forEach(el => { %>
+        
+        <div class="card">
+          <div class="info">
+            <h2><%= el.name %> </h2>
+            <h5><%= el.email %> </h5>
+            <!-- <h5 class="type"><%= el.acc_type %> Account </h5> -->
+            <p><%= el.acc_type %> Account</p>
+          </div>
+          <div class="btn">
+            <button class="button" onclick="window.location.href='/user/<%= el.userID %>'">View</button>
+          </div>
+        </div>
+        <% }) %> 
+      </div>
+    </section>
+  </body>
+</html>
