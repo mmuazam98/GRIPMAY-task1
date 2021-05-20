@@ -4,10 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "engines": {
-    "node": "12.18.2"
+    "node": "10.x"
   },
   "keywords": [],
   "author": "",
